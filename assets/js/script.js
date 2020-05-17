@@ -1,7 +1,7 @@
 // Assignment code here
 
 /*
-!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
 */
 
 
@@ -134,9 +134,125 @@
                   else {
                     // INSERT CODE GENERATOR FUNCTION HERE
                     alert("congrats jim")
+                    
+                  }
+                  
+                  
+                  if (
+                    (upperCase === 'yes' || 
+                    upperCase === 'y')) {
+                      var upperCase = "P";
+                      console.log(upperCase);
+                    }
+                  else {
+                      var upperCase = 0
+                      console.log(upperCase);
                   }
 
+                  if (
+                    (lowerCase === 'yes' || 
+                    lowerCase === 'y')) {
+                      var lowerCase = "Q";
+                      console.log(lowerCase);
+                    }
+                  else {
+                      var lowerCase = 0
+                      console.log(lowerCase);
+                  }
 
+                  if (
+                    (wholeNumbers === 'yes' || 
+                    wholeNumbers === 'y')) {
+                      var wholeNumbers = "R";
+                      console.log(wholeNumbers);
+                    }
+                  else {
+                      var wholeNumbers = 0
+                      console.log(wholeNumbers);
+                  }
+
+                  if (
+                    (specialCharacters === 'yes' || 
+                    specialCharacters === 'y')) {
+                      var specialCharacters = "S";
+                      console.log(specialCharacters);
+                    }
+                  else {
+                      var specialCharacters = 0
+                      console.log(specialCharacters);
+                  }        
+                 
+     /*             
+                  var uC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+                  var lC = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+                  var wN = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                  var sC = ['!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@']
+      */
+     
+      
+//CODE WORKS UP TO HERE!!!
+
+        /*        var uC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                  var lC = "abcdefghijklmnopqrstuvwxyz";
+                  var wN = "0123456789";
+                  var sC = "!#$%&'()*+,-./:;<=>?@";
+        */
+                  var char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+                  var num = "0123456789";
+                  var sym = "!#$%&'()*+,-./:;<=>?@";
+
+                  var characters = char;
+                 // (numBox."R") ? characters += num : '';
+                 // (symBox."S") ? characters += sym : '';
+                 var charNum = passwordLength;
+                 // var numBox = "R";
+                  //var symBox = "S"; 
+                 
+                 
+                 
+                console.log(charNum, characters);
+        
+                console.log(passwordLength, characters);
+
+
+                  function password(l, char){
+                    
+                    var pwd = "";
+
+                    for(var i = 0; i<l; i++) {
+
+                      pwd = pwd + char.charAt(Math.floor(Math.random() * Math.floor(char.length -1)));
+                      console.log(pwd)
+                    }
+                  
+
+                    return pwd;
+
+                  }
+                  password(passwordLength, char);             
+                
+                
+                
+              }
+// END OF MAIN FUNCTION!!!
+
+
+/*
+              
+
+
+                  
+password = password + values.charAt(Math.floor(Math.random() * Math.floor(value.length -1)));
+values is array of possible values
+
+
+
+
+
+
+
+
+                  
 
 
 
@@ -148,32 +264,20 @@ console.log(lowerCase);
 console.log(wholeNumbers);
 console.log(specialCharacters);
 
-
-
-
-              }
-
-
-
-
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-// Add event listener to generate button
-generateBtn.addEventListener("click", function() {
-  writePassword();
-});
-
-
-/*// Write password to the #password input
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}*/
+}
 
+*/
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
-
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", function() {
+  writePassword();
+});
