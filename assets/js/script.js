@@ -1,20 +1,11 @@
 // Assignment code here
 
-
 /*
 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 */
 
-var passwordLength  = null
-var upperCase = null
-var lowerCase = null
-var wholeNumbers = null
-var specialCharacters = null
-var humanInput = null
 
-
-
-              function passwordOptions() {
+              function writePassword() {
                 
                 var passwordLength = prompt('What length do you want your password? 8 - 128 Characters?');
                   passwordLength = passwordLength.toLowerCase();
@@ -22,7 +13,7 @@ var humanInput = null
                     //LEFT BLANK TO LET JS GO TO NEXT INSTRUCTIONS PAST ELSE                    
                   }
                   else {
-                    passwordOptions();
+                    writePassword();
                   }
                   var passwordLength = Math.floor(passwordLength);
                   console.log(passwordLength);
@@ -47,7 +38,7 @@ var humanInput = null
                     }
                   else {
                     alert('You must answer Y/N');
-                    passwordOptions();
+                    writePassword();
                   }
                 
                   var lowerCase = prompt('Do you want to use lowercase letters?, yes or no?')
@@ -70,7 +61,7 @@ var humanInput = null
                     }
                   else {
                     alert('You must answer y/n');
-                    passwordOptions();
+                    writePassword();
                   }
                 
                   var wholeNumbers = prompt('Do you want to use numbers "(example 1,2,3?)"?, yes or no?')
@@ -93,7 +84,7 @@ var humanInput = null
                     }
                   else {
                     alert('You must answer y/n');
-                    passwordOptions();
+                    writePassword();
                   }
                
                   var specialCharacters = prompt('Do you want to use special characters "(example !,@,&?)"?, yes or no?')
@@ -116,41 +107,73 @@ var humanInput = null
                     }
                   else {
                     alert('You must answer y/n');
-                    passwordOptions();
+                    writePassword();
                   }
                        
                 var humanInput = confirm('You chose: ' + '  '+ 'Password Length:'+ passwordLength + ' / '+ 'UPPER CASE:'+ upperCase + ' / '+ 'lower case:'+ lowerCase + ' / ' +'Numbers:'+ wholeNumbers + ' / ' +'Special Characters:'+ specialCharacters + '  ' + ' Is this correct?')
                   console.log(humanInput);
                   if (humanInput) {
- //INSERT CALL FUNCTION TO SEND IT TO GENERATOR                   
-                    alert("Here's a cheese burger!");
+                  //LEFT BLANK TO LET JS GO TO NEXT INSTRUCTIONS PAST ELSE                   
                   }
                   else {
-                    passwordOptions();
+                    writePassword();
                   }
+
+                  if (
+                    (upperCase === 'no' || 
+                    upperCase === 'n') &&
+                    (lowerCase === 'no' || 
+                    lowerCase === 'n') &&
+                    (wholeNumbers === 'no' ||
+                    wholeNumbers === 'n') && 
+                    (specialCharacters === 'no' ||
+                    specialCharacters === 'n')) {
+                    alert("You must chose at least one option!");
+                    writePassword();
+                  }
+                  else {
+                    // INSERT CODE GENERATOR FUNCTION HERE
+                    alert("congrats jim")
+                  }
+
+
+
+
+
+
+
+console.log(passwordLength);
+console.log(upperCase);
+console.log(lowerCase);
+console.log(wholeNumbers);
+console.log(specialCharacters);
+
+
+
+
               }
 
 
-console.log(passwordLength)
-console.log(upperCase)
-console.log(lowerCase)
-console.log(wholeNumbers)
-console.log(specialCharacters)
-console.log(humanInput)
 
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+// Add event listener to generate button
+generateBtn.addEventListener("click", function() {
+  writePassword();
+});
 
-// Write password to the #password input
+
+/*// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}
+}*/
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
+
